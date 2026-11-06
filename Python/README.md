@@ -1,3 +1,3 @@
 # Python Projects
 
-My Python projects dump
+My Python projects
