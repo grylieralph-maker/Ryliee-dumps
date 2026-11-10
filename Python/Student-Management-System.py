@@ -16,23 +16,25 @@ students = {
 }
 
 def add_student(students):
-    name = input("Enter Student Name: ")
-    if name not in students:
+    name = input("Enter Student Name: ").capitalize()
+    if name in students or not name.isalpha():
+        print("Invalid input")
+    else: 
         grade = float(input("Enter Student Grade: "))
         students[name] = {'grade': grade}
+        print(f"{name} has been added to the list")
         return students
-    else: 
-        print("Student Already Listed")
     return(students)    
         
 
 def update_grade(students):
     print("Update Grade")
-    name = input("Enter Student Name: ")
+    name = input("Enter Student Name: ").capitalize()
     if name in students:
         change = float(input("Change Grade: "))
         if change >= 0 and change <= 100 :
             students[name]['grade'] = change
+            print("Grade updated ")
             return students[name]['grade']
         else: 
             print("Invalid Input! Please Enter From(1-100)")
@@ -44,14 +46,14 @@ def update_grade(students):
 def get_average(students):
     total = 0
     for value in students.values():
-        total += value['grades']
-    return total / len(students)
+        total += value['grade']
+    print(total / len(students))
         
         
 
 def display_student(students):   
     for key, value in students.items(): 
-        print(f"{key}: {value['grade']}")
+        print(f"{key}: {value['grade']:g}")
 
 while True:
     print("(1)Add\n(2)Update\n(3)Average\n(4)Display\n(5)Exit")
