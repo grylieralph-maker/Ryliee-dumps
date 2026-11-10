@@ -16,31 +16,38 @@ students = {
 }
 
 def add_student(students):
-    name = input("Enter Student Name: ").capitalize()
-    if name in students or not name.isalpha():
-        print("Invalid input")
-    else: 
-        grade = float(input("Enter Student Grade: "))
-        students[name] = {'grade': grade}
-        print(f"{name} has been added to the list")
-        return students
-    return(students)    
+    while True:
+        name = input("Enter Student Name: ").capitalize()
+        if name in students or not name.isalpha():
+            print("Invalid input. Please try again")
+        else: 
+            while True:
+                try:
+                    grade = float(input("Enter Student Grade: "))
+                    students[name] = {'grade': grade}
+                    print(f"{name} has been added to the list")
+                    return students
+                except ValueError:
+                    print("Invalid input. Please try again")
+       
         
 
 def update_grade(students):
     print("Update Grade")
-    name = input("Enter Student Name: ").capitalize()
-    if name in students:
-        change = float(input("Change Grade: "))
-        if change >= 0 and change <= 100 :
-            students[name]['grade'] = change
-            print("Grade updated ")
-            return students[name]['grade']
+    while True:
+        name = input("Enter Student Name: ").capitalize()
+        if name in students:
+            while True:
+                change = float(input("Change Grade: "))
+                if change >= 0 and change <= 100 :
+                    students[name]['grade'] = change
+                    print("Grade updated ")
+                    return students[name]['grade']
+                else: 
+                    print("Invalid Input! Please Enter From(1-100)")
         else: 
-            print("Invalid Input! Please Enter From(1-100)")
-    else: 
-        print("Student not found!")
-        
+            print("Student not found!")
+            
         
 
 def get_average(students):
