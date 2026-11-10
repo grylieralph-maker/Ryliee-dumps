@@ -26,7 +26,7 @@ def add_student(students):
                 try:
                     grade = float(input("Enter Student Grade: "))
                     students[name] = {'grade': grade}
-                    print(f"{name} has been added to the list")
+                    print(f"{name} has been added to the list\n")
                     return students
                 except ValueError:
                     print("Invalid input. Please try again")
@@ -34,7 +34,7 @@ def add_student(students):
         
 
 def update_grade(students):
-    print(10*"=","","="*10)
+    print(10*"=","UPDATE GRADES","="*10)
     while True:
         name = input("Enter Student Name: ").capitalize()
         if name in students:
@@ -43,7 +43,7 @@ def update_grade(students):
                     change = float(input("Change Grade: "))
                     if change >= 0 and change <= 100 :
                         students[name]['grade'] = change
-                        print("Grade updated ")
+                        print("Grade updated successfully\n")
                         return students[name]['grade']
                     else: 
                         print("Invalid Input! Please enter from(1-100)")
@@ -55,18 +55,18 @@ def update_grade(students):
         
 
 def get_average(students):
-    print(10*"=","","="*10)
+    print(10*"=","AVERAGE","="*10)
     total = 0
     for value in students.values():
         total += value['grade']
-    print(f"Overall average: {total / len(students)}")
+    print(f"Overall average: {total / len(students)}\n")
         
         
 
 def display_student(students):   
-    print(10*"=","","="*10)
+    print(10*"=","STUDENTS LIST","="*10)
     for key, value in students.items(): 
-        print(f"{key}: {value['grade']:g}")
+        print(f"{key}: {value['grade']:g}\n")
 
 while True:
     print("(1)Add Student\n(2)Update Student's Grade\n(3)Calculate Average\n(4)Display List\n(5)Exit")
@@ -81,7 +81,7 @@ while True:
         elif choice == "4":
             display_student(students)
         elif choice == "5":
-            print("===== PROGRAM FINISHED =====")
+            print("\n===== PROGRAM FINISHED =====")
             break
         else:
             print("Invalid choice!")
