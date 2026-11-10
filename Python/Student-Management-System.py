@@ -61,8 +61,9 @@ def display_students(students):
     for key, value in students.items(): 
         print(f"{key}: {value['grade']:g}\n")
 
+print(10*"=","STUDENT MANAGEMENT SYSTEM","="*10,"\n")
 while True:
-    print("(1)Add Student\n(2)Update Student's Grade\n(3)Calculate Average\n(4)Display List\n(5)Exit")
+    print("(1) Add Student\n(2) Update Student's Grade\n(3) Calculate Average\n(4) Display List\n(5) Exit\n")
     try:
         choice = input("Enter your choice: ")
         if choice == "1":
