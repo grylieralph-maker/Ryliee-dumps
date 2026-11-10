@@ -16,7 +16,7 @@ students = {
 }
 
 def add_student(students):
-    add = input("Enter Student Name: ")
+    name = input("Enter Student Name: ")
     if name not in students:
         grade = float(input("Enter Student Grade: "))
         students[name] = {'grade': grade}
@@ -26,7 +26,7 @@ def add_student(students):
     return(students)    
         
 
-def update_grade():
+def update_grade(students):
     print("Update Grade")
     name = input("Enter Student Name: ")
     if name in students:
@@ -41,7 +41,7 @@ def update_grade():
         
         
 
-def get_average():
+def get_average(students):
     total = 0
     for value in students.values():
         total += value['grades']
@@ -49,8 +49,28 @@ def get_average():
         
         
 
-def display_student():   
+def display_student(students):   
     for key, value in students.items(): 
         print(f"{key}: {value['grade']}")
 
-display_student()        
+while True:
+    print("(1)Add\n(2)Update\n(3)Average\n(4)Display\n(5)Exit")
+    try:
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            add_student(students)
+        elif choice == "2":
+            update_grade(students)
+        elif choice == "3":
+            get_average(students)
+        elif choice == "4":
+            display_student(students)
+        elif choice == "5":
+            print("Program finished.")
+            break
+        else:
+            print("Invalid choice!")
+    except ValueError:
+        print("Invalid choice!")
+
+            
