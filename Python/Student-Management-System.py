@@ -16,10 +16,11 @@ students = {
 }
 
 def add_student(students):
+    print(10*"=","ADD STUDENT","="*10)
     while True:
         name = input("Enter Student Name: ").capitalize()
         if name in students or not name.isalpha():
-            print("Invalid input. Please try again")
+            print("Student already listed or invalid input. Please try again")
         else: 
             while True:
                 try:
@@ -33,37 +34,42 @@ def add_student(students):
         
 
 def update_grade(students):
-    print("Update Grade")
+    print(10*"=","","="*10)
     while True:
         name = input("Enter Student Name: ").capitalize()
         if name in students:
             while True:
-                change = float(input("Change Grade: "))
-                if change >= 0 and change <= 100 :
-                    students[name]['grade'] = change
-                    print("Grade updated ")
-                    return students[name]['grade']
-                else: 
-                    print("Invalid Input! Please Enter From(1-100)")
+                try:
+                    change = float(input("Change Grade: "))
+                    if change >= 0 and change <= 100 :
+                        students[name]['grade'] = change
+                        print("Grade updated ")
+                        return students[name]['grade']
+                    else: 
+                        print("Invalid Input! Please enter from(1-100)")
+                except ValueError:
+                    print("Invalid input! Please enter from(1-100)")
         else: 
-            print("Student not found!")
+            print("Student not found! Try again")
             
         
 
 def get_average(students):
+    print(10*"=","","="*10)
     total = 0
     for value in students.values():
         total += value['grade']
-    print(total / len(students))
+    print(f"Overall average: {total / len(students)}")
         
         
 
 def display_student(students):   
+    print(10*"=","","="*10)
     for key, value in students.items(): 
         print(f"{key}: {value['grade']:g}")
 
 while True:
-    print("(1)Add\n(2)Update\n(3)Average\n(4)Display\n(5)Exit")
+    print("(1)Add Student\n(2)Update Student's Grade\n(3)Calculate Average\n(4)Display List\n(5)Exit")
     try:
         choice = input("Enter your choice: ")
         if choice == "1":
@@ -75,7 +81,7 @@ while True:
         elif choice == "4":
             display_student(students)
         elif choice == "5":
-            print("Program finished.")
+            print("===== PROGRAM FINISHED =====")
             break
         else:
             print("Invalid choice!")
