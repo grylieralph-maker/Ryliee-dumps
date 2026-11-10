@@ -1,13 +1,3 @@
-"""add_student() - add a student with a grade.
-update_grade() - update an existing student's grade.
-get_average() - calculate the average grade.
-display_students() - display all students and their grades.
-Rules:
-No global variables
-Validate grades (1-100).
-Don't allow duplicate student names.
-Use functions to organize your program."""
-
 students = {
     "Stan": {"grade": 90},
     "Butters": {"grade": 85},
@@ -18,16 +8,19 @@ students = {
 def add_student(students):
     print(10*"=","ADD STUDENT","="*10)
     while True:
-        name = input("Enter Student Name: ").capitalize()
-        if name in students or not name.isalpha():
-            print("Student already listed or invalid input. Please try again")
+        name = input("Enter Student Name: ").title()
+        if name in students or not name.replace(" ","").isalpha():
+            print("Student already listed or Invalid input. Please try again")
         else: 
             while True:
                 try:
                     grade = float(input("Enter Student Grade: "))
-                    students[name] = {'grade': grade}
-                    print(f"{name} has been added to the list\n")
-                    return students
+                    if grade >=0 and grade <=100:
+                        students[name] = {'grade': grade}
+                        print(f"{name} has been added to the list\n")
+                        return students
+                    else:
+                        print("Invalid input. Please enter from(0-100)")
                 except ValueError:
                     print("Invalid input. Please try again")
        
@@ -36,7 +29,7 @@ def add_student(students):
 def update_grade(students):
     print(10*"=","UPDATE GRADES","="*10)
     while True:
-        name = input("Enter Student Name: ").capitalize()
+        name = input("Enter Student Name: ").title()
         if name in students:
             while True:
                 try:
@@ -46,9 +39,9 @@ def update_grade(students):
                         print("Grade updated successfully\n")
                         return students[name]['grade']
                     else: 
-                        print("Invalid Input! Please enter from(1-100)")
+                        print("Invalid Input! Please enter from(0-100)")
                 except ValueError:
-                    print("Invalid input! Please enter from(1-100)")
+                    print("Invalid input! Please enter from(0-100)")
         else: 
             print("Student not found! Try again")
             
@@ -63,7 +56,7 @@ def get_average(students):
         
         
 
-def display_student(students):   
+def display_students(students):   
     print(10*"=","STUDENTS LIST","="*10)
     for key, value in students.items(): 
         print(f"{key}: {value['grade']:g}\n")
@@ -79,7 +72,7 @@ while True:
         elif choice == "3":
             get_average(students)
         elif choice == "4":
-            display_student(students)
+            display_students(students)
         elif choice == "5":
             print("\n===== PROGRAM FINISHED =====")
             break
