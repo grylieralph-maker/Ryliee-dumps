@@ -37,7 +37,7 @@ def add_items(items):
                     
                     
                     items.append(item)
-                    break
+                    return
         
             else:
                 print("Item already exist")
@@ -48,42 +48,41 @@ def add_items(items):
 def view(items):
     for item in items:
         print(f"Item: {item['Name']}")
-        print(f"Quantitty: {item['Quantity']}")
+        print(f"Quantity: {item['Quantity']}")
         print(f"Price: {item['Price']}")
-        print(f"Category: {item['Category']}")
+        print(f"Category: {item['Category']}\n")
     
 def update(items):
     while True:
         try: 
             find = input("Update item: ").capitalize()
-            for item in items:
-                if find in item:
-                    while True:
-                        price = float(input("Change price: "))
-                        item['Price'] = price
-                        quantity = int(input("Change quantity: "))
-                        item['Quantity'] = quantity
-                        category = input("Change category: ")
-                        if category == "1":
-                            item['Category'] = 'Fruits'
-                        elif category == "2":
-                            item['Category'] = 'Vegetable'
-                        elif category == "3":
-                            item['Category'] = 'Meat'
-                        elif category == "4":
-                            item['Category'] = 'Dairy'
-                        elif category == "5":
-                            item['Category'] = 'Beverages'
-                        elif category == "6":
-                            item['Category'] = 'Others'
-                        else:
-                            print("Invalid choice")
-                else:
-                    print("Item not found")
+            if find in items:
+                while True:
+                    price = float(input("Change price: "))
+                    item['Price'] = price
+                    quantity = int(input("Change quantity: "))
+                    item['Quantity'] = quantity
+                    category = input("Change category: ")
+                    if category == "1":
+                        item['Category'] = 'Fruits'
+                    elif category == "2":
+                        item['Category'] = 'Vegetable'
+                    elif category == "3":
+                        item['Category'] = 'Meat'
+                    elif category == "4":
+                        item['Category'] = 'Dairy'
+                    elif category == "5":
+                        item['Category'] = 'Beverages'
+                    elif category == "6":
+                        item['Category'] = 'Others'
+                    else:
+                        print("Invalid choice")
+            else:
+                print("Item not found")
 
         except ValueError:
             print("Invalid input")
-    
+
 
 
     
@@ -110,7 +109,24 @@ while True:
 
     choice = input("Enter your choice: ")
 
-    if choice == "":
-    elif choice == "":
-    elif choice == "":    
+    if choice == "1":
+        add_items(items)
+    elif choice == "2":
+        view(items)
+    elif choice == "3":  
+        update(items)
+    elif choice == "4": 
+        remove(items)
+    elif choice == "5": 
+        search(items)
+    elif choice == "6":   
+        category_summary(items)
+    elif choice == "7":
+        calc_overall(items)
+    elif choice == "8": 
+        print("Program finished!")
+        break
+    else:
+        print("Invalid choice. Try again")
+        
     
