@@ -54,9 +54,7 @@ def add_items(items):
             
             items.append(item)
             break
-            
-            
-
+                       
     else:
         print("Item already exist")
 
@@ -69,15 +67,36 @@ def view(items):
         print(f"Category: {item['Category']}\n")
 
 def update(items):
-    while True:
-        try: 
-            find = input("Update item: ").capitalize()
-            if find in items:
+    while True:       
+        find = input("Update item: ").capitalize()
+        for item in items:
+            if find in item['Name']:
                 while True:
-                    price = float(input("Change price: "))
-                    item['Price'] = price
-                    quantity = int(input("Change quantity: "))
-                    item['Quantity'] = quantity
+                    try:
+                        price = float(input("Change price: "))
+                        if price > 0:
+                            item['Price'] = price
+                            break
+                        else:
+                            print("Price should be positive or greater than 0")
+                    except ValueError:
+                        print("Invalid input")
+                        
+                while True:
+                    try:
+                        quantity = int(input("Change quantity: "))
+                        if quantity > 0:
+                            item['Quantity'] = quantity
+                            break
+                        else:
+                            print("Price should be positive or greater than 0")
+                            
+                    except ValueError:
+                        prin("Invalid input")
+    
+                while True: 
+                    print("===== CATEGORIES =====")
+                    print("(1)Fruits\n(2)Vegetable\n(3)Meat\n(4)Dairy\n(5)Beverages\n(6)Others\n")
                     category = input("Change category: ")
                     if category == "1":
                         item['Category'] = 'Fruits'
@@ -93,11 +112,15 @@ def update(items):
                         item['Category'] = 'Others'
                     else:
                         print("Invalid choice")
+                        continue 
+
+                    return
+                        
+                        
             else:
                 print("Item not found")
     
-        except ValueError:
-            print("Invalid input")
+        
 
 
 
