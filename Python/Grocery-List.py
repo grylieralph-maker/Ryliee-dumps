@@ -120,13 +120,22 @@ def update(items):
             else:
                 print("Item not found")
     
-        
-
-
-
+            
+def remove(items):
+    while True:
+        rem = input("Remove item: ").capitalize()
+        while True:
+            for item in items:
+                if rem in item['Name']:
+                    if item['Name'] == rem:
+                        items.remove(item)
+                        print("Item has been removed")
+                        return
+                        
+                else:
+                    print("Item not found")
     
-def remove():
-    pass 
+        
 def search():
     pass
 def category_summary():
@@ -144,7 +153,6 @@ while True:
     print("(5) Search Item")
     print("(6) Category Summary")
     print("(7) Calculate Overall Total")
-    print("(8) Exit")
 
     choice = input("Enter your choice: ")
 
