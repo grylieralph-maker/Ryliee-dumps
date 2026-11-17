@@ -27,8 +27,12 @@ public class BasicCalculator{
                 break;
             }
             case '÷':{
-                System.out.println(num1+" ÷ "+num2+" = "+(num1 / num2));
-                break;
+                if (num2 == 0){
+                    System.out.println("Cannot divide by zero!");
+                }
+                else{
+                    System.out.println(num1+" ÷ "+num2+" = "+(num1 / num2));
+                }break;
             }
             default:{
                 System.out.println("Invalid operator!");
