@@ -15,16 +15,20 @@ public class BasicCalculator{
         switch (operation){
             case '+':{
                 System.out.println(num1 + " + " + num2 + " =  " + (num1 + num2));
+                break;
                 
             }
             case '-':{
                 System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+                break;
             }
             case 'x':{
                 System.out.println(num1 +" x "+num2+" = "+(num1 * num2));
+                break;
             }
             case '÷':{
                 System.out.println(num1+" ÷ "+num2+" = "+(num1 / num2));
+                break;
             }
         }
         
