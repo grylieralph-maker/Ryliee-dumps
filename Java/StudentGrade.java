@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
 
-public class StudentGrade{
+public class StudenGrade{
     public static void main(String[]args){
 
         Scanner input = new Scanner(System.in);
@@ -18,6 +18,42 @@ public class StudentGrade{
             System.out.println("(6) Display Highest and Lowest");
             System.out.println("(7) Calculate Average");
             System.out.println("(8) Sort Score");
+            System.out.println("(9) Exit");
+
+            int choice = input.nextInt();
+
+            switch(choice){
+                case 1:{
+                    
+                }
+                case 2:{
+                    
+                }
+                case 3:{
+                    
+                }
+                case 4:{
+                    
+                }
+                case 5:{
+                    
+                }
+                case 6:{
+                    
+                }
+                case 8:{
+                    
+                }
+                default:{
+                    
+                }
+
+                if (choice == 9){
+                    System.out.print("Program finish");
+                    break;
+                    }
+                    
+            }
         }
     }
 }
