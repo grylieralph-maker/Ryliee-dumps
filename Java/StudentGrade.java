@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
 
-public class StudenGrade{
+public class StudenGra{
     public static void main(String[]args){
 
         Scanner input = new Scanner(System.in);
@@ -24,36 +24,44 @@ public class StudenGrade{
 
             switch(choice){
                 case 1:{
+                    break;
                     
                 }
                 case 2:{
+                    break;
                     
                 }
                 case 3:{
+                    break;
                     
                 }
                 case 4:{
+                    break;
                     
                 }
                 case 5:{
+                    break;
                     
                 }
                 case 6:{
+                    break;
                     
                 }
                 case 8:{
+                    break;
                     
                 }
                 default:{
                     
-                }
+                    
+                }}
 
                 if (choice == 9){
-                    System.out.print("Program finish");
+                    System.out.println("Program finish");
                     break;
                     }
                     
-            }
+            
         }
     }
 }
