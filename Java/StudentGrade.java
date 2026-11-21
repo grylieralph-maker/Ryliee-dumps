@@ -109,6 +109,14 @@ public class StudentGrades{
                     
                 }
                 case 7:{
+                    System.out.println("===AVERAGE===");
+                    double total = 0;
+                    for (double grade : grades){
+                         total += grade;
+                        
+                    }
+                    double ave = total / grades.size();
+                    System.out.println("Average: "+ave);
                     
                 }
                 case 8:{
