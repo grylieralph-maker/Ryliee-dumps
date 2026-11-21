@@ -81,6 +81,17 @@ public class StudenGrades{
                     
                 }
                 case 5:{
+                    System.out.println("===REMOVE STUDENT===");
+                    System.out.print("Enter name: ");
+                    String rem = input.nextLine();
+                    
+                    int index = names.indexOf(rem); 
+
+                    if (index != -1){
+                        names.remove(index);
+                        grades.remove(index);
+                        System.out.println(rem+ " has been removed.");
+                    }
                     
                     break;
                     
