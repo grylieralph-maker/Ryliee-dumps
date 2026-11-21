@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
 
-public class StudenGrades{
+public class StudentGrades{
     public static void main(String[]args){
 
         Scanner input = new Scanner(System.in);
@@ -97,6 +97,14 @@ public class StudenGrades{
                     
                 }
                 case 6:{
+                    System.out.println("===HIGHEST AND LOWEST===");
+
+                    int high = grades.indexOf(Collections.max(grades));
+
+                    int low = grades.indexOf(Collections.min(grades));
+                    
+                    System.out.println("Highest: "+ names.get(high)+", "+grades.get(high));
+                    System.out.println("Lowest: "+names.get(low)+", "+grades.get(low));
                     break;
                     
                 }
