@@ -12,7 +12,7 @@ public class StudenGra{
         while (true){
             System.out.println("(1) Add Students");
             System.out.println("(2) View All");
-            System.out.println("(3) Serach Students");
+            System.out.println("(3) Search Students");
             System.out.println("(4) Update Score");
             System.out.println("(5) Remove Students");
             System.out.println("(6) Display Highest and Lowest");
@@ -40,13 +40,24 @@ public class StudenGra{
                 }
                 case 2:{
                     for (int i = 0; i < names.size(); i++){
-                        System.out.println("Name: "+names.get(i)+"     Grade: "+grades.get(i));
+                        System.out.println("Name: "+names.get(i));
+                        System.out.println("Grade: "+grades.get(i));
+                        System.out.println();
                         
                     }
                     break;
                     
                 }
                 case 3:{
+                    System.out.print("Search student: ");
+                    String search = input.nextLine();
+
+                    int index = names.indexOf(search);
+
+                    if (index != -1){
+                        System.out.println("Name: "+search);
+                        System.out.println("Grade: "+grades.get(index));
+                    }
                     break;
                     
                 }
@@ -60,6 +71,9 @@ public class StudenGra{
                 }
                 case 6:{
                     break;
+                    
+                }
+                case 7:{
                     
                 }
                 case 8:{
