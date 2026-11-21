@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
 
-public class StudenGra{
+public class StudenGrades{
     public static void main(String[]args){
 
         Scanner input = new Scanner(System.in);
@@ -25,6 +25,7 @@ public class StudenGra{
 
             switch(choice){
                 case 1:{
+                    System.out.println("===ADD STUDENT===");
                     System.out.print("Enter student name: ");
                     String name = input.nextLine();
                     
@@ -39,6 +40,7 @@ public class StudenGra{
                     
                 }
                 case 2:{
+                    System.out.println("===SHOW ALL===");
                     for (int i = 0; i < names.size(); i++){
                         System.out.println("Name: "+names.get(i));
                         System.out.println("Grade: "+grades.get(i));
@@ -49,6 +51,7 @@ public class StudenGra{
                     
                 }
                 case 3:{
+                    System.out.println("===SEARCH STUDENT===");
                     System.out.print("Search student: ");
                     String search = input.nextLine();
 
@@ -62,10 +65,23 @@ public class StudenGra{
                     
                 }
                 case 4:{
+                    System.out.println("===UPDATE SCORE===");
+                    System.out.print("Enter name: ");
+                    String update = input.nextLine();
+
+                    int index = names.indexOf(update);
+
+                    if (index != -1){
+                        System.out.print("Change: ");
+                        double change = input.nextDouble();
+                        grades.set(index, change);
+                        
+                    }                    
                     break;
                     
                 }
                 case 5:{
+                    
                     break;
                     
                 }
