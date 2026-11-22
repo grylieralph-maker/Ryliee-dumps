@@ -120,10 +120,30 @@ public class StudentGrades{
                     
                 }
                 case 8:{
+                    System.out.println("===SORT===");
+                    boolean swapped;
+                    for (int i = 0; i < grades.size()-1;i++){
+                        swapped = false;
+                        for (int j = 0; j < grades.size()-1-i;j++){
+                            if (grades.get(j) > grades.get(j +1)){
+                                double temp = grades.get(j);
+                                grades.set(j, grades.get(j+1));
+                                grades.set(j+1,temp);
+                         String tempname = names.get(j);
+                                names.set(j,names.get(j+1));
+                                names.set(j+1,tempname);
+                        swapped = true;
+                                                    }
+                            
+                        }if (!swapped){
+                        System.out.println("Successfully sorted!");
+                    break;}
+                    }
                     break;
                     
                 }
                 default:{
+                    System.out.println("Invalid choice. Try again");
                     
                     
                 }}
