@@ -117,7 +117,7 @@ public class StudentGrades{
                     }
                     double ave = total / grades.size();
                     System.out.println("Average: "+ave);
-                    
+                    break;
                 }
                 case 8:{
                     System.out.println("===SORT===");
@@ -139,6 +139,9 @@ public class StudentGrades{
                         System.out.println("Successfully sorted!");
                     break;}
                     }
+                    for (int a = 0; a<grades.size();a++){
+                        System.out.println("Name: "+names.get(a)+"  "+grades.get(a));
+                    }
                     break;
                     
                 }
@@ -149,7 +152,7 @@ public class StudentGrades{
                 }}
 
                 if (choice == 9){
-                    System.out.println("Program finish");
+                    System.out.println("Program finished");
                     break;
                     }
                     
