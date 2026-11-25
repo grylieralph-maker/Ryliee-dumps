@@ -51,6 +51,11 @@ public class StudentGrades{
                     
                 }
                 case 3:{
+                    if (grades.isEmpty()){
+                        System.out.println("The list is empty.");
+                    }
+                    else{
+                        
                     System.out.println("===SEARCH STUDENT===");
                     System.out.print("Search student: ");
                     String search = input.nextLine();
@@ -60,7 +65,10 @@ public class StudentGrades{
                     if (index != -1){
                         System.out.println("Name: "+search);
                         System.out.println("Grade: "+grades.get(index));
-                    }
+                        }
+                    else{
+                        System.out.println("Student not found!")
+                    }}
                     break;
                     
                 }
