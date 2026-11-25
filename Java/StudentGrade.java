@@ -73,6 +73,10 @@ public class StudentGrades{
                     
                 }
                 case 4:{
+                    if (grades.isEmpty()){
+                        System.out.println("The list is empty");
+                    }
+                    else{
                     System.out.println("===UPDATE SCORE===");
                     System.out.print("Enter name: ");
                     String update = input.nextLine();
@@ -84,11 +88,20 @@ public class StudentGrades{
                         double change = input.nextDouble();
                         grades.set(index, change);
                         
-                    }                    
+                    }
+                    else{
+                        System.out.println("Student not found!");
+                    }}                    
                     break;
                     
                 }
                 case 5:{
+                    if (grades.isEmpty()){
+                        System.out.println("The list is empty");
+                    }
+                    else{
+                        
+                    
                     System.out.println("===REMOVE STUDENT===");
                     System.out.print("Enter name: ");
                     String rem = input.nextLine();
@@ -100,6 +113,9 @@ public class StudentGrades{
                         grades.remove(index);
                         System.out.println(rem+ " has been removed.");
                     }
+                    else{
+                        System.out.println("Student not found!");
+                    }}
                     
                     break;
                     
