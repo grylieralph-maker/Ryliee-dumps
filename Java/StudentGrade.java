@@ -67,7 +67,7 @@ public class StudentGrades{
                         System.out.println("Grade: "+grades.get(index));
                         }
                     else{
-                        System.out.println("Student not found!")
+                        System.out.println("Student not found!");
                     }}
                     break;
                     
