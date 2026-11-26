@@ -32,8 +32,13 @@ public class StudentGrades{
                     System.out.print("Enter student grade: ");
                     double grade = input.nextDouble();
                     
+                    if (grade >= 0 && grade<=100){
                     names.add(name);
-                    grades.add(grade);
+                    grades.add(grade);}
+
+                    else{
+                        System.out.println("Grade must be within 0-100");
+                    }
 
                     
                     break;
