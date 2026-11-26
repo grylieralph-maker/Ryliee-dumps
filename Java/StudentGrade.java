@@ -121,6 +121,11 @@ public class StudentGrades{
                     
                 }
                 case 6:{
+                    if (grades.isEmpty()){
+                        System.out.println("The list is empty");
+                    }
+
+                    else{
                     System.out.println("===HIGHEST AND LOWEST===");
 
                     int high = grades.indexOf(Collections.max(grades));
@@ -128,11 +133,17 @@ public class StudentGrades{
                     int low = grades.indexOf(Collections.min(grades));
                     
                     System.out.println("Highest: "+ names.get(high)+", "+grades.get(high));
-                    System.out.println("Lowest: "+names.get(low)+", "+grades.get(low));
+                    System.out.println("Lowest: "+names.get(low)+", "+grades.get(low));}
+                    
                     break;
                     
                 }
                 case 7:{
+                    if (grades.isEmpty()){
+                        System.out.println("The list is empty");
+                    }
+
+                    else{
                     System.out.println("===AVERAGE===");
                     double total = 0;
                     for (double grade : grades){
@@ -140,10 +151,15 @@ public class StudentGrades{
                         
                     }
                     double ave = total / grades.size();
-                    System.out.println("Average: "+ave);
+                    System.out.println("Average: "+ave);}
+                    
                     break;
                 }
                 case 8:{
+                    if (grades.size()<=1){
+                        System.out.println("Cant sort, not enough students");
+                    }
+                    else{
                     System.out.println("===SORT===");
                     boolean swapped;
                     for (int i = 0; i < grades.size()-1;i++){
@@ -160,12 +176,12 @@ public class StudentGrades{
                                                     }
                             
                         }if (!swapped){
-                        System.out.println("Successfully sorted!");
+                        
                     break;}
                     }
                     for (int a = 0; a<grades.size();a++){
                         System.out.println("Name: "+names.get(a)+"  "+grades.get(a));
-                    }
+                    }}
                     break;
                     
                 }
